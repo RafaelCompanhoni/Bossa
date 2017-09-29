@@ -1,0 +1,14 @@
+{
+  "name": "cms",
+  "version": "1.0.0",
+  "description": "A super simple flat file CMS built with Node and React.",
+  "main": "index.js",
+  "scripts": {
+    "build": "webpack"
+  },
+  "author": "Rafael Companhoni",
+  "license": "MIT",
+  "devDependencies": {
+    "webpack": "^3.6.0"
+  }
+}
