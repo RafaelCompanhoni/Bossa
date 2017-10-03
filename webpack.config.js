@@ -5,7 +5,8 @@ const config = {
     entry: './src/index.js',
     output: {
         path: path.resolve(__dirname, 'build'),
-        filename: 'bundle.js'
+        filename: 'bundle.js',
+        publicPath: 'build/'
     },
     module: {
         rules: [
@@ -19,10 +20,19 @@ const config = {
                     fallback: "style-loader",
                     use: "css-loader"
                 })
+            },
+            {
+                test: /\.(jpe?g|png|gif|svg)$/,
+                use: [
+                    {
+                        loader: 'url-loader',
+                        options: { limit: 40000 }
+                    },
+                    'image-webpack-loader'
+                ]
             }
         ]
     },
-
     plugins: [
         new ExtractTextPlugin('style.css')
     ]
