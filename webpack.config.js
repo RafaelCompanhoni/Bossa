@@ -14,7 +14,7 @@ const config = {
     },
     output: {
         path: path.resolve(__dirname, 'build'),
-        filename: '[name].js'
+        filename: '[name].[chunkhash].js'
     },
     module: {
         rules: [
@@ -44,7 +44,7 @@ const config = {
     },
     plugins: [
         new webpack.optimize.CommonsChunkPlugin({
-            name: 'vendor'
+            name: ['vendor', 'manifest']
         }),
         new HtmlWebpackPlugin({
             template: './src/index.html'
