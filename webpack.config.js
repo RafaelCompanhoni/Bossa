@@ -1,11 +1,18 @@
+var webpack = require('webpack');
 const path = require('path');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
+//const VENDOR_LIBS = ['lodash', 'react', 'react-dom', 'react-redux','react-router', 'redux', 'redux-form','redux-thunk'];
+const VENDOR_LIBS = ['lodash'];
+
 const config = {
-    entry: './src/index.js',
+    entry: {
+        bundle: './src/index.js',
+        vendor: VENDOR_LIBS
+    },
     output: {
         path: path.resolve(__dirname, 'build'),
-        filename: 'bundle.js',
+        filename: '[name].js',
         publicPath: 'build/'
     },
     module: {
@@ -35,6 +42,9 @@ const config = {
         ]
     },
     plugins: [
+        new webpack.optimize.CommonsChunkPlugin({
+            name: 'vendor'
+        }),
         new ExtractTextPlugin('style.css')
     ]
 };
