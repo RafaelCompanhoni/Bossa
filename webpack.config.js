@@ -1,5 +1,7 @@
-var webpack = require('webpack');
+const webpack = require('webpack');
 const path = require('path');
+
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 //const VENDOR_LIBS = ['lodash', 'react', 'react-dom', 'react-redux','react-router', 'redux', 'redux-form','redux-thunk'];
@@ -12,8 +14,7 @@ const config = {
     },
     output: {
         path: path.resolve(__dirname, 'build'),
-        filename: '[name].js',
-        publicPath: 'build/'
+        filename: '[name].js'
     },
     module: {
         rules: [
@@ -44,6 +45,9 @@ const config = {
     plugins: [
         new webpack.optimize.CommonsChunkPlugin({
             name: 'vendor'
+        }),
+        new HtmlWebpackPlugin({
+            template: './src/index.html'
         }),
         new ExtractTextPlugin('style.css')
     ]
