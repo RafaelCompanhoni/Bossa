@@ -5,3 +5,4 @@ button.onclick = () => {
 };
 
 document.body.appendChild(button);
+console.log("Test2");
