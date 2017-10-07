@@ -9,47 +9,47 @@ const VENDOR_LIBS = ['lodash'];
 const commonConfig = {
     entry: {
         bundle: './src/index.js',
-        vendor: VENDOR_LIBS
+        vendor: VENDOR_LIBS,
     },
     output: {
         path: path.resolve(__dirname, 'build'),
-        filename: '[name].[chunkhash].js'
+        filename: '[name].[chunkhash].js',
     },
     module: {
         rules: [
             {
                 test: /\.js$/,
                 use: 'babel-loader',
-                exclude: /node_modules/
+                exclude: /node_modules/,
             },
             {
                 test: /\.css$/,
                 use: ExtractTextPlugin.extract({
-                    fallback: "style-loader",
-                    use: "css-loader"
-                })
+                    fallback: 'style-loader',
+                    use: 'css-loader',
+                }),
             },
             {
                 test: /\.(jpe?g|png|gif|svg)$/,
                 use: [
                     {
                         loader: 'url-loader',
-                        options: { limit: 40000 }
+                        options: { limit: 40000 },
                     },
-                    'image-webpack-loader'
-                ]
-            }
-        ]
+                    'image-webpack-loader',
+                ],
+            },
+        ],
     },
     plugins: [
         new webpack.optimize.CommonsChunkPlugin({
-            name: ['vendor', 'manifest']
+            name: ['vendor', 'manifest'],
         }),
         new HtmlWebpackPlugin({
-            template: './src/index.html'
+            template: './src/index.html',
         }),
-        new ExtractTextPlugin('style.css')
-    ]
+        new ExtractTextPlugin('style.css'),
+    ],
 };
 
 const productionConfig = () => commonConfig;
