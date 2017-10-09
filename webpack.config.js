@@ -82,11 +82,7 @@ const developmentConfig = () => {
     },
   };
 
-  return Object.assign(
-    {},
-    commonConfig,
-    config,
-  );
+  return Object.assign({}, commonConfig, config);
 };
 
 module.exports = (env) => {
