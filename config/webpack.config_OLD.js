@@ -1,5 +1,7 @@
 const webpack = require('webpack');
 const path = require('path');
+const merge = require('webpack-merge');
+const parts = require('./webpack.parts.js');
 
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
@@ -63,32 +65,17 @@ const commonConfig = {
 
 const productionConfig = () => commonConfig;
 
-const developmentConfig = () => {
-  const config = {
-    devServer: {
-      host: process.env.HOST,
-      port: process.env.PORT,
-      stats: {
-        assets: false,
-        modules: false,
-        hash: false,
-        timings: false,
-        version: false,
-      },
-      overlay: {
-        errors: true,
-        warnings: true,
-      },
-    },
-  };
-
-  return Object.assign({}, commonConfig, config);
-};
+const developmentConfig = merge([
+  parts.devServer({
+    host: process.env.HOST,
+    port: process.env.PORT,
+  }),
+]);
 
 module.exports = (env) => {
   if (env === 'production') {
     return productionConfig();
   }
 
-  return developmentConfig();
+  return merge(commonConfig, developmentConfig);
 };
