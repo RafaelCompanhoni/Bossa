@@ -1,5 +1,6 @@
-// import React from 'react';
-// import ReactDOM from 'react-dom';
-// import App from './App';
-// import './index.css';
-// console.log('TODO -- REACT PROJECT HERE');
+import small from '../assets/small.jpg';
+
+const smallImage = document.createElement('img');
+smallImage.src = small;
+document.body.appendChild(smallImage);
+
