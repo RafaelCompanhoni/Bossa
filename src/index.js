@@ -1,8 +1,5 @@
-const button = document.createElement('button');
-button.innerText = 'Click me';
-button.onclick = () => {
-    System.import('./image_viewer');
-};
-
-document.body.appendChild(button);
-console.log("Test3");
+// import React from 'react';
+// import ReactDOM from 'react-dom';
+// import App from './App';
+// import './index.css';
+// console.log('TODO -- REACT PROJECT HERE');

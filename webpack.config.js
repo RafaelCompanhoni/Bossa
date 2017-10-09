@@ -39,6 +39,15 @@ const commonConfig = {
                     'image-webpack-loader',
                 ],
             },
+            {
+                test: /\.js$/,
+                enforce: 'pre',
+                loader: 'eslint-loader',
+                exclude: /node_modules/,
+                options: {
+                    emitWarning: true,
+                },
+            },
         ],
     },
     plugins: [
@@ -59,6 +68,13 @@ const developmentConfig = () => {
         devServer: {
             host: process.env.HOST, 
             port: process.env.PORT, 
+            stats: {
+                assets: false,
+                modules: false,
+                hash: false,
+                timings: false,
+                version: false,
+            },
         },
     };
 
