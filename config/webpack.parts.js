@@ -1,5 +1,7 @@
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
+// module rules
+
 exports.babel = () => ({
   module: {
     rules: [
@@ -58,6 +60,8 @@ exports.lintJavaScript = () => ({
     ],
   },
 });
+
+// dev server
 
 exports.devServer = ({ host, port } = {}) => ({
   devServer: {

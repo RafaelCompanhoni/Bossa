@@ -4,7 +4,7 @@
   "description": "A super simple flat file CMS built with Node and React.",
   "main": "index.js",
   "scripts": {
-    "start": "webpack-dev-server --config ./config/webpack.config_OLD.js --env development",
+    "start": "webpack-dev-server --config ./config/webpack.development.js",
     "build": "npm run clean && webpack",
     "clean": "rimraf build",
     "lint:js": "eslint src/ webpack.*.js --cache"
