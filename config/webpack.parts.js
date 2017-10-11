@@ -1,5 +1,3 @@
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
-
 // module rules
 
 exports.babel = () => ({
@@ -14,19 +12,48 @@ exports.babel = () => ({
   },
 });
 
-exports.stylesheets = () => ({
+exports.loadCSS = () => ({
   module: {
     rules: [
       {
         test: /\.css$/,
-        use: ExtractTextPlugin.extract({
-          fallback: 'style-loader',
-          use: 'css-loader',
-        }),
+        use: [
+          'style-loader',
+          {
+            loader: 'css-loader',
+            options: {
+              modules: true,
+            },
+          }],
       },
     ],
   },
 });
+
+exports.loadSass = () => ({
+  module: {
+    rules: [
+      {
+        test: /\.(scss|sass)$/,
+        use: ['style-loader', 'css-loader', 'fast-sass-loader'],
+      },
+    ],
+  },
+});
+
+// exports.loadCSSOld = () => ({
+//   module: {
+//     rules: [
+//       {
+//         test: /\.css$/,
+//         use: ExtractTextPlugin.extract({
+//           fallback: 'style-loader',
+//           use: 'css-loader',
+//         }),
+//       },
+//     ],
+//   },
+// });
 
 exports.images = () => ({
   module: {
