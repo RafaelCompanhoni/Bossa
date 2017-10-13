@@ -6,16 +6,16 @@ const parts = require('./webpack.parts.js');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
-const VENDOR_LIBS = ['lodash'];
+const VENDOR_LIBS = ['lodash', 'react', 'react-dom'];
 
 const commonConfig = merge([
   {
     entry: {
-      bundle: './src/index.js',
+      bundle: './src/index.jsx',
       vendor: VENDOR_LIBS,
     },
     output: {
-      path: path.resolve(__dirname, 'build'),
+      path: path.resolve(__dirname, '../build'),
       filename: '[name].[chunkhash].js',
     },
     plugins: [

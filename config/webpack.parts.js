@@ -1,12 +1,17 @@
-// module rules
-
 exports.babel = () => ({
   module: {
     rules: [
       {
-        test: /\.js$/,
-        use: 'babel-loader',
-        exclude: /node_modules/,
+        test: /\.(js|jsx)$/,
+        exclude: /(node_modules)/,
+        use: [
+          {
+            loader: 'babel-loader',
+            options: {
+              presets: ['env', 'react']
+            }
+          },
+        ]
       },
     ],
   },
@@ -41,20 +46,6 @@ exports.loadSass = () => ({
   },
 });
 
-// exports.loadCSSOld = () => ({
-//   module: {
-//     rules: [
-//       {
-//         test: /\.css$/,
-//         use: ExtractTextPlugin.extract({
-//           fallback: 'style-loader',
-//           use: 'css-loader',
-//         }),
-//       },
-//     ],
-//   },
-// });
-
 exports.images = () => ({
   module: {
     rules: [
@@ -87,8 +78,6 @@ exports.lintJavaScript = () => ({
     ],
   },
 });
-
-// dev server
 
 exports.devServer = ({ host, port } = {}) => ({
   devServer: {
