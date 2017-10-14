@@ -1,3 +1,6 @@
+const webpack = require('webpack');
+const autoprefixer = require('autoprefixer');
+
 exports.babel = () => ({
   module: {
     rules: [
@@ -17,31 +20,44 @@ exports.babel = () => ({
   },
 });
 
-exports.loadCSS = () => ({
+exports.loadStyles = () => ({
   module: {
     rules: [
       {
-        test: /\.css$/,
+        test: /\.(css|scss)$/,
+        exclude: /node_modules/,
         use: [
-          'style-loader',
+          {
+            loader: 'style-loader',
+            options: {
+              sourceMap: true,
+            }
+          },
           {
             loader: 'css-loader',
             options: {
+              sourceMap: true,
               modules: true,
-            },
-          }],
-      },
-    ],
-  },
-});
-
-exports.loadSass = () => ({
-  module: {
-    rules: [
-      {
-        test: /\.(scss|sass)$/,
-        use: ['style-loader', 'css-loader', 'fast-sass-loader'],
-      },
+              importLoaders: 2,
+            }
+          },
+          {
+            loader: 'postcss-loader',
+            options: {
+              sourceMap: true,
+              plugins: [
+                autoprefixer({ browsers: ['last 2 versions'] })
+              ]
+            }
+          },
+          {
+            loader: 'fast-sass-loader',
+            options: {
+              sourceMap: true,
+            }
+          }
+        ]
+      }
     ],
   },
 });
@@ -96,3 +112,19 @@ exports.devServer = ({ host, port } = {}) => ({
     },
   },
 });
+
+exports.sourceMap = () => ({
+  devtool: '#source-map',
+});
+
+exports.uglify = () => ({
+  plugins: [
+    new webpack.optimize.UglifyJsPlugin({
+      sourceMap: true,
+      warnings: false,
+      mangle: true,
+    }),
+  ],
+});
+
+

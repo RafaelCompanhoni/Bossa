@@ -29,8 +29,7 @@ const commonConfig = merge([
     ],
   },
   parts.babel(),
-  parts.loadCSS(),
-  parts.loadSass(),
+  parts.loadStyles(),
   parts.images(),
   parts.lintJavaScript(),
 ]);
