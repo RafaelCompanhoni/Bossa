@@ -18,6 +18,9 @@ const commonConfig = merge([
       path: path.resolve(__dirname, '../build'),
       filename: '[name].[chunkhash].js',
     },
+    resolve: {
+      extensions: ['.js', '.jsx', '.scss']
+    },
     plugins: [
       new webpack.optimize.CommonsChunkPlugin({
         name: ['vendor', 'manifest'],
@@ -28,10 +31,10 @@ const commonConfig = merge([
       new ExtractTextPlugin('style.css'),
     ],
   },
+  parts.lintJavaScript(),
   parts.babel(),
   parts.loadStyles(),
   parts.images(),
-  parts.lintJavaScript(),
 ]);
 
 module.exports = commonConfig;

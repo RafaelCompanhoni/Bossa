@@ -83,7 +83,7 @@ exports.lintJavaScript = () => ({
   module: {
     rules: [
       {
-        test: /\.js$/,
+        test: /\.(js|jsx)$/,
         enforce: 'pre',
         loader: 'eslint-loader',
         exclude: /node_modules/,
@@ -126,5 +126,3 @@ exports.uglify = () => ({
     }),
   ],
 });
-
-
