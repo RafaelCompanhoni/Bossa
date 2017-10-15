@@ -2,11 +2,12 @@ const webpack = require('webpack');
 const path = require('path');
 const merge = require('webpack-merge');
 const parts = require('./webpack.parts.js');
+const packageJson = require('../package.json');
 
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
-const VENDOR_LIBS = ['lodash', 'react', 'react-dom'];
+const VENDOR_LIBS = Object.keys(packageJson.dependencies);
 
 const commonConfig = merge([
   {

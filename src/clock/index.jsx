@@ -1,7 +1,8 @@
-import React from 'react';
-import './style.scss';
+import React, { Component } from 'react';
+import CSSModules from 'react-css-modules';
+import styles from './styles.scss';
 
-class Clock extends React.Component {
+class Clock extends Component {
   constructor(props) {
     super(props);
     this.state = { date: new Date() };
@@ -26,7 +27,7 @@ class Clock extends React.Component {
 
   render() {
     return (
-      <div>
+      <div styleName="clock">
         <h1>Hello, world!</h1>
         <h2>It is {this.state.date.toLocaleTimeString()}.</h2>
       </div>
@@ -34,4 +35,4 @@ class Clock extends React.Component {
   }
 }
 
-export default Clock;
+export default CSSModules(Clock, styles);

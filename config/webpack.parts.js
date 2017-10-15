@@ -12,9 +12,9 @@ exports.babel = () => ({
             loader: 'babel-loader',
             options: {
               presets: ['env', 'react']
-            }
+            },
           },
-        ]
+        ],
       },
     ],
   },
@@ -31,7 +31,7 @@ exports.loadStyles = () => ({
             loader: 'style-loader',
             options: {
               sourceMap: true,
-            }
+            },
           },
           {
             loader: 'css-loader',
@@ -39,25 +39,26 @@ exports.loadStyles = () => ({
               sourceMap: true,
               modules: true,
               importLoaders: 2,
-            }
+              localIdentName: '[local]___[hash:base64:5]',
+            },
           },
           {
             loader: 'postcss-loader',
             options: {
               sourceMap: true,
               plugins: [
-                autoprefixer({ browsers: ['last 2 versions'] })
-              ]
-            }
+                autoprefixer({ browsers: ['last 2 versions'] }),
+              ],
+            },
           },
           {
             loader: 'fast-sass-loader',
             options: {
               sourceMap: true,
-            }
-          }
-        ]
-      }
+            },
+          },
+        ],
+      },
     ],
   },
 });

@@ -1,9 +1,17 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import Clock from './components/clock';
+import Clock from './clock';
+import StarRating from './starRating';
+
+const App = () => (
+  <div>
+    <Clock />
+    <StarRating totalStars={7} starsSelected={3} />
+  </div>
+);
 
 ReactDOM.render(
-  <Clock />,
+  <App />,
   document.getElementById('root'),
 );
