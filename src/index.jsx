@@ -2,12 +2,12 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 
 import Clock from './clock';
-import StarRating from './starRating';
+import ColorPicker from './colorPicker';
 
 const App = () => (
   <div>
     <Clock />
-    <StarRating totalStars={7} starsSelected={3} />
+    <ColorPicker />
   </div>
 );
 

@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import CSSModules from 'react-css-modules';
-import shortid from 'shortid';
+import { v4 } from 'uuid';
 import styles from './styles.scss';
+
 import Star from './star';
 
 class StarRating extends Component {
@@ -29,7 +30,7 @@ class StarRating extends Component {
         {
           [...Array(totalStars)].map((n, i) =>
             (<Star
-              key={shortid.generate()}
+              key={v4()}
               selected={i < starsSelected}
               onClick={() => this.change(i + 1)}
             />))

@@ -22,6 +22,7 @@ const commonConfig = merge([
     resolve: {
       extensions: ['.js', '.jsx', '.scss']
     },
+    // TODO - move plugins to 'parts'
     plugins: [
       new webpack.optimize.CommonsChunkPlugin({
         name: ['vendor', 'manifest'],
@@ -29,6 +30,7 @@ const commonConfig = merge([
       new HtmlWebpackPlugin({
         template: './src/index.html',
       }),
+      // TODO - review this
       new ExtractTextPlugin('style.css'),
     ],
   },
