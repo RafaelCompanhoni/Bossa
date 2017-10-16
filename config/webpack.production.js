@@ -4,7 +4,7 @@ const merge = require('webpack-merge');
 
 const productionConfig = merge([
   commonConfig,
-  parts.uglify(),
+  parts.minificationPlugin(),
 ]);
 
 module.exports = productionConfig;

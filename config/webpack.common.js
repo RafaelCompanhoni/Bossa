@@ -1,11 +1,7 @@
-const webpack = require('webpack');
 const path = require('path');
 const merge = require('webpack-merge');
 const parts = require('./webpack.parts.js');
 const packageJson = require('../package.json');
-
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 const VENDOR_LIBS = Object.keys(packageJson.dependencies);
 
@@ -20,24 +16,15 @@ const commonConfig = merge([
       filename: '[name].[chunkhash].js',
     },
     resolve: {
-      extensions: ['.js', '.jsx', '.scss']
+      extensions: ['.js', '.jsx', '.scss'],
     },
-    // TODO - move plugins to 'parts'
-    plugins: [
-      new webpack.optimize.CommonsChunkPlugin({
-        name: ['vendor', 'manifest'],
-      }),
-      new HtmlWebpackPlugin({
-        template: './src/index.html',
-      }),
-      // TODO - review this
-      new ExtractTextPlugin('style.css'),
-    ],
   },
-  parts.lintJavaScript(),
-  parts.babel(),
-  parts.loadStyles(),
-  parts.images(),
+  parts.jsLinterLoader(),
+  parts.jsTranspilerLoader(),
+  parts.stylesLoader(),
+  parts.imagesLoader(),
+  parts.useHtmlTemplatePlugin(),
+  parts.codeSplittingPlugin(),
 ]);
 
 module.exports = commonConfig;

@@ -4,8 +4,8 @@ const parts = require('./webpack.parts.js');
 
 const developmentConfig = merge([
   commonConfig,
-  parts.sourceMap(),
-  parts.devServer({
+  parts.sourceMapConfig(),
+  parts.devServerConfig({
     host: process.env.HOST,
     port: process.env.PORT,
   }),

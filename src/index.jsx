@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import './styles.scss';
 
 import Clock from './clock';
 import ColorPicker from './colorPicker';
