@@ -2,13 +2,12 @@ import React from 'react';
 import CSSModules from 'react-css-modules';
 import styles from './styles.scss';
 
-import BookList from '../../containers/book_list';
-import BookDetail from '../../containers/book_detail';
+import Clock from '../clock';
 
 const App = () => (
   <div>
-    <BookList />
-    <BookDetail />
+    <h1 styleName="app-title">Bossa CMS</h1>
+    <Clock />
   </div>
 );
 
