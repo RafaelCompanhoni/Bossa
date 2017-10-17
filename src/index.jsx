@@ -1,16 +1,17 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Provider } from 'react-redux';
-import { createStore, applyMiddleware } from 'redux';
 
-import reducers from './reducers';
-import App from './components/app';
+import Clock from './components/clock';
+import ColorPicker from './components/colorPicker';
 
-const createStoreWithMiddleware = applyMiddleware()(createStore);
+const App = () => (
+  <div>
+    <Clock />
+    <ColorPicker />
+  </div>
+);
 
 ReactDOM.render(
-  <Provider store={createStoreWithMiddleware(reducers)}>
-    <App />
-  </Provider>
-  , document.getElementById('root'),
+  <App />,
+  document.getElementById('root'),
 );
