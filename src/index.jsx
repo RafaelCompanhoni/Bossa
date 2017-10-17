@@ -1,20 +1,16 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './styles.scss';
+import { Provider } from 'react-redux';
+import { createStore, applyMiddleware } from 'redux';
 
-import Clock from './clock';
-import ColorPicker from './colorPicker';
-import PeopleList from './peopleList';
+import reducers from './reducers';
+import App from './components/app';
 
-const App = () => (
-  <div>
-    <Clock />
-    <ColorPicker />
-    <PeopleList count={10} />
-  </div>
-);
+const createStoreWithMiddleware = applyMiddleware()(createStore);
 
 ReactDOM.render(
-  <App />,
-  document.getElementById('root'),
+  <Provider store={createStoreWithMiddleware(reducers)}>
+    <App />
+  </Provider>
+  , document.getElementById('root'),
 );
