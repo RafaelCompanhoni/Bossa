@@ -30,7 +30,7 @@ exports.jsTranspilerLoader = () => ({
     rules: [
       {
         test: /\.(js|jsx)$/,
-        exclude: /(node_modules)/,
+        exclude: /node_modules/,
         use: [
           {
             loader: 'babel-loader',
@@ -72,7 +72,7 @@ exports.stylesLoader = () => ({
               },
             },
             {
-              loader: 'fast-sass-loader',
+              loader: 'sass-loader',
               options: {
                 sourceMap: true,
               },
