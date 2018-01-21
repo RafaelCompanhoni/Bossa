@@ -1,10 +1,9 @@
 import React from 'react';
-import Clock from './clock';
+import Header from './header';
 
 const App = () => (
   <div>
-    <h1>Bossa CMS</h1>
-    <Clock />
+    <Header />
   </div>
 );
 

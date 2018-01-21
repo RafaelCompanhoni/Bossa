@@ -1,21 +1,24 @@
-import React, { Component } from 'react';
+import React from 'react';
 import CSSModules from 'react-css-modules';
 import styles from '../../styles/header.scss';
 
-class Header extends Component {
-  constructor(props) {
-    super(props);
-    this.state = { date: new Date() };
-  }
+const Header = () => (
+  <div styleName="header">
+    <div styleName="logo-box">
+      <img styleName="logo" src="assets/img/logo-white.png" alt="Logo" />
+    </div>
 
-  render() {
-    return (
-      <div styleName="clock">
-        <h1>Hello, world!</h1>
-        <h2>It is {this.state.date.toLocaleTimeString()}.</h2>
-      </div>
-    );
-  }
-}
+    <div styleName="text-box">
+      <h1 styleName="heading-primary">
+        <span styleName="heading-primary-main">Outdoors</span>
+        <span styleName="heading-primary-sub">is where life happens</span>
+      </h1>
+
+      {
+        // eslint-disable-next-line
+      }<a href="#" styleName="btn-white">Discover our tours</a>
+    </div>
+  </div>
+);
 
 export default CSSModules(Header, styles);

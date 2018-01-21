@@ -1,13 +1,24 @@
+/****** minimum reset styles ******/
 * {
   margin: 0;
   padding: 0;
+
+  /* will ensure consistent and predictable sizing */
   box-sizing: border-box;
 }
 
 body {
+  /* font styles */
   font-family: "Lato", sans-serif;
   font-weight: 400;
   font-size: 16px;
   line-height: 1.7;
   color: #777;
+
+  /* main container */
+  padding: 35px;
+}
+
+a {
+  text-decoration: none;
 }
