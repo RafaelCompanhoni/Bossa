@@ -22,12 +22,12 @@
 /****** LOGO ******/
 .logo-box {
   position: absolute;
-  top: 40px;
-  left: 40px;
+  top: 4rem;
+  left: 4rem;
 }
 
 .logo {
-  height: 35px;
+  height: 3.5rem;
 }
 
 /****** MAIN TITLE ******/
@@ -44,7 +44,7 @@
 .heading-primary {
   color: #FFF;
   text-transform: uppercase;
-  margin-bottom: 60px;
+  margin-bottom: 6rem;
 
   /* ensures that animation will present no 'glitches' */
   backface-visibility: hidden;
@@ -52,9 +52,9 @@
 
 .heading-primary-main {
   display: block;
-  font-size: 60px;
+  font-size: 6rem;
   font-weight: 400;
-  letter-spacing: 35px;
+  letter-spacing: 3.5rem;
 
   /* uses animation 'moveInLeft' declared below */
   animation-name: moveInLeft;
@@ -64,9 +64,9 @@
 
 .heading-primary-sub {
   display: block;
-  font-size: 20px;
+  font-size: 2rem;
   font-weight: 700;
-  letter-spacing: 17.4px;
+  letter-spacing: 1.74rem;
 
   /* uses animation 'moveInRight' declared below ('condensed' syntax) */
   animation: moveInRight 1s ease-out;
@@ -79,8 +79,9 @@
   text-transform: uppercase;
   background-color: #FFF;
   color: #777;
-  padding: 15px 40px;
-  border-radius: 100px;
+  padding: 1.5rem 4rem;
+  border-radius: 10rem;
+  font-size: 1.6rem;
 
   /* allows the use of 'transform' property */
   display: inline-block;
@@ -102,12 +103,12 @@
   transform: translateY(-3px);
 
   /* no shadow in the x axis, 10px down and 20px blur -- the shadow is a transparent black */
-  box-shadow: 0 10px 20px rgba(0,0,0,.2);
+  box-shadow: 0 1rem 2rem rgba(0,0,0,.2);
 }
 
 .btn-white:active {
   transform: translateY(-1px);
-  box-shadow: 0 5px 10px rgba(0,0,0,.2);
+  box-shadow: 0 .5rem 1rem rgba(0,0,0,.2);
 }
 
 /* adds an pseudo-element behind the button */
@@ -119,7 +120,7 @@
   display: inline-block;
   height: 100%;
   width: 100%;
-  border-radius: 100px;
+  border-radius: 10rem;
   background-color: #FFF;
 
   /* relative to the button */
@@ -143,11 +144,11 @@
 @keyframes moveInLeft {
   0% {
     opacity: 0;
-    transform: translate(-100px);
+    transform: translate(-10rem);
   }
 
   80% {
-    transform: translate(10px);
+    transform: translate(1rem);
   }
 
   100% {
@@ -159,11 +160,11 @@
 @keyframes moveInRight {
   0% {
     opacity: 0;
-    transform: translate(100px);
+    transform: translate(10rem);
   }
 
   80% {
-    transform: translate(-10px);
+    transform: translate(-1rem);
   }
 
   100% {
@@ -175,7 +176,7 @@
 @keyframes moveInBottom {
   0% {
     opacity: 0;
-    transform: translateY(30px)
+    transform: translateY(3rem)
   }
 
   100% {

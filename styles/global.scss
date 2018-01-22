@@ -1,22 +1,28 @@
-/****** minimum reset styles ******/
-* {
+*,
+*::after,
+*::before {
   margin: 0;
   padding: 0;
+  box-sizing: inherit;
+}
 
-  /* will ensure consistent and predictable sizing */
-  box-sizing: border-box;
+html {
+  /* the default font size is 16 so 0.625* 16 === 10px. This enables the user to change the font-size and keeps the rem properties working nicely */
+  font-size: 62.5%;
 }
 
 body {
   /* font styles */
   font-family: "Lato", sans-serif;
   font-weight: 400;
-  font-size: 16px;
   line-height: 1.7;
   color: #777;
 
   /* main container */
-  padding: 35px;
+  padding: 3rem;
+
+  /* will ensure consistent and predictable sizing */
+  box-sizing: border-box;
 }
 
 a {
