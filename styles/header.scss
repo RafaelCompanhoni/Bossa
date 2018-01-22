@@ -1,8 +1,13 @@
+$color-primary: #55c57a;
+$color-primary-light: #7ed56f;
+$color-primary-dark: #28b485;
+$color-white: #FFF;
+
 /****** HERO ******/
 
 .header {
   /* a gradient, starting from left and diagonally to 'right bottom' -- it's placed over a background image  */
-  background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.8), rgba(39, 179, 133, 0.8)), url(../assets/img/hero.jpg);
+  background-image: linear-gradient(to right bottom, rgba($color-primary-light, 0.8), rgba($color-primary-dark, 0.8)), url(../assets/img/hero.jpg);
 
   /* prevents 'cropping' the image when resizing window */
   background-position: top;
@@ -45,7 +50,7 @@
 }
 
 .heading-primary {
-  color: #FFF;
+  color: $color-white;
   text-transform: uppercase;
   margin-bottom: 6rem;
 
@@ -80,7 +85,7 @@
 .btn--white:link,
 .btn--white:visited {
   text-transform: uppercase;
-  background-color: #FFF;
+  background-color: $color-white;
   color: #777;
   padding: 1.5rem 4rem;
   border-radius: 10rem;
@@ -124,7 +129,7 @@
   height: 100%;
   width: 100%;
   border-radius: 10rem;
-  background-color: #FFF;
+  background-color: $color-white;
 
   /* relative to the button */
   position: absolute;
@@ -136,7 +141,7 @@
   transition: all .4s;
 }
 
-/* whenever the pseudo-element is hovered then it grows and disappears (explosion) */
+/* whenever the pseudo-element is hovered then it grows and disappears (explosion) -- the transition of .4s is defined above */
 .btn--white:hover::after {
   transform: scaleX(1.4) scaleY(1.6);
   opacity: 0;

@@ -1,3 +1,4 @@
+/* minimum CSS reset */
 *,
 *::after,
 *::before {
@@ -16,7 +17,6 @@ body {
   font-family: "Lato", sans-serif;
   font-weight: 400;
   line-height: 1.7;
-  color: #777;
 
   /* main container */
   padding: 3rem;
