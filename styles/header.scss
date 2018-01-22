@@ -1,7 +1,10 @@
 $color-primary: #55c57a;
 $color-primary-light: #7ed56f;
 $color-primary-dark: #28b485;
+
 $color-white: #FFF;
+$color-black: #000;
+$color-gray: #777;
 
 /****** HERO ******/
 
@@ -23,31 +26,33 @@ $color-white: #FFF;
 
   /* makes the header container the reference for absolute positioned elements within (e.g. 'logo-box') */
   position: relative;
+
+  /****** LOGO ******/
+
+  &__logo-box {
+    position: absolute;
+    top: 4rem;
+    left: 4rem;
+  }
+
+  &__logo {
+    height: 3.5rem;
+  }
+
+  /****** MAIN TEXT BOX ******/
+
+  &__text-box {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    text-align: center;
+
+    /* after positioning the element we use the translate the element itself */
+    transform: translate(-50%, -50%);
+  }
 }
 
-/****** LOGO ******/
-
-.header__logo-box {
-  position: absolute;
-  top: 4rem;
-  left: 4rem;
-}
-
-.header__logo {
-  height: 3.5rem;
-}
-
-/****** MAIN TITLE ******/
-
-.header__text-box {
-  position: absolute;
-  top: 40%;
-  left: 50%;
-  text-align: center;
-
-  /* after positioning the element we use the translate the element itself */
-  transform: translate(-50%, -50%);
-}
+/****** MAIN TEXT BOX CONTENTS ******/
 
 .heading-primary {
   color: $color-white;
@@ -56,95 +61,97 @@ $color-white: #FFF;
 
   /* ensures that animation will present no 'glitches' */
   backface-visibility: hidden;
-}
 
-.heading-primary--main {
-  display: block;
-  font-size: 6rem;
-  font-weight: 400;
-  letter-spacing: 3.5rem;
+  &--main {
+    display: block;
+    font-size: 6rem;
+    font-weight: 400;
+    letter-spacing: 3.5rem;
 
-  /* uses animation 'moveInLeft' declared below */
-  animation-name: moveInLeft;
-  animation-duration: 1s;
-  animation-timing-function: ease-out;
-}
+    /* uses animation 'moveInLeft' declared below */
+    animation-name: moveInLeft;
+    animation-duration: 1s;
+    animation-timing-function: ease-out;
+  }
 
-.heading-primary--sub {
-  display: block;
-  font-size: 2rem;
-  font-weight: 700;
-  letter-spacing: 1.74rem;
+  &--sub {
+    display: block;
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: 1.74rem;
 
-  /* uses animation 'moveInRight' declared below ('condensed' syntax) */
-  animation: moveInRight 1s ease-out;
+    /* uses animation 'moveInRight' declared below ('condensed' syntax) */
+    animation: moveInRight 1s ease-out;
+  }
 }
 
 /****** MAIN ACTION BUTTON ******/
 
-.btn--white:link,
-.btn--white:visited {
-  text-transform: uppercase;
-  background-color: $color-white;
-  color: #777;
-  padding: 1.5rem 4rem;
-  border-radius: 10rem;
-  font-size: 1.6rem;
+.btn--white {
+  &:link,
+  &:visited {
+    text-transform: uppercase;
+    background-color: $color-white;
+    color: $color-gray;
+    padding: 1.5rem 4rem;
+    border-radius: 10rem;
+    font-size: 1.6rem;
 
-  /* allows the use of 'transform' property */
-  display: inline-block;
+    /* allows the use of 'transform' property */
+    display: inline-block;
 
-  /* all properties will be applied in a transition of .2s */
-  transition: all .2s;
+    /* all properties will be applied in a transition of .2s */
+    transition: all .2s;
 
-  /* makes this a reference to absolute positioning the ::after pseudo element */
-  position: relative;
+    /* makes this a reference to absolute positioning the ::after pseudo element */
+    position: relative;
 
-  /* buttom animated from bottom with delay of .75s */
-  animation: moveInBottom .5s ease-out .75s;
+    /* buttom animated from bottom with delay of .75s */
+    animation: moveInBottom .5s ease-out .75s;
 
-  /* applies the '0%' styles from 'moveInBottom' when the element is first loaded */
-  animation-fill-mode: backwards;
-}
+    /* applies the '0%' styles from 'moveInBottom' when the element is first loaded */
+    animation-fill-mode: backwards;
+  }
 
-.btn--white:hover {
-  transform: translateY(-3px);
+  /* adds an pseudo-element behind the button */
+  &::after {
+    /* mandatory property for 'after' pseudo-element */
+    content: "";
 
-  /* no shadow in the x axis, 10px down and 20px blur -- the shadow is a transparent black */
-  box-shadow: 0 1rem 2rem rgba(0,0,0,.2);
-}
+    /* size */
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    border-radius: 10rem;
+    background-color: $color-white;
 
-.btn--white:active {
-  transform: translateY(-1px);
-  box-shadow: 0 .5rem 1rem rgba(0,0,0,.2);
-}
+    /* relative to the button */
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
 
-/* adds an pseudo-element behind the button */
-.btn--white::after {
-  /* mandatory property for 'after' pseudo-element */
-  content: "";
+    /* controls the speed of the hover effects declared below */
+    transition: all .4s;
+  }
 
-  /* size */
-  display: inline-block;
-  height: 100%;
-  width: 100%;
-  border-radius: 10rem;
-  background-color: $color-white;
+  &:hover {
+    transform: translateY(-3px);
 
-  /* relative to the button */
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: -1;
+    /* no shadow in the x axis, 10px down and 20px blur -- the shadow is a transparent black */
+    box-shadow: 0 1rem 2rem rgba($color-black,.2);
 
-  /* controls the speed of the hover effects declared below */
-  transition: all .4s;
-}
+    /* whenever the pseudo-element is hovered then it grows and disappears (explosion) -- the transition of .4s is defined in ::after */
+    &::after {
+      transform: scaleX(1.4) scaleY(1.6);
+      opacity: 0;
+    }
+  }
 
-/* whenever the pseudo-element is hovered then it grows and disappears (explosion) -- the transition of .4s is defined above */
-.btn--white:hover::after {
-  transform: scaleX(1.4) scaleY(1.6);
-  opacity: 0;
+  &:active {
+    transform: translateY(-1px);
+    box-shadow: 0 .5rem 1rem rgba($color-black,.2);
+  }
 }
 
 /****** ANIMATION DEFINITIONS ******/
