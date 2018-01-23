@@ -1,0 +1,14 @@
+@import "../abstracts/variables";
+
+:global .row {
+  background-color: #eee;
+  max-width: $grid-width;
+  margin: 0 auto;
+
+  // the gutter is applied to all rows except the last one
+  &:not(:last-child) {
+    margin-bottom: $gutter-vertical;
+  }
+
+
+}

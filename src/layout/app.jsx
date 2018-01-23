@@ -1,9 +1,9 @@
 import React from 'react';
-import Header from './header';
+import Home from '../pages/home/Home';
 
 const App = () => (
   <div>
-    <Header />
+    <Home />
   </div>
 );
 

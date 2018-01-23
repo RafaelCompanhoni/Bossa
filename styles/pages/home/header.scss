@@ -1,11 +1,11 @@
-@import "../abstracts/variables";
-@import "../base/animations";
+@import "../../abstracts/variables";
+@import "../../base/animations";
 
 /****** HERO ******/
 
 .header {
   /* a gradient, starting from left and diagonally to 'right bottom' -- it's placed over a background image  */
-  background-image: linear-gradient(to right bottom, rgba($color-primary-light, 0.8), rgba($color-primary-dark, 0.8)), url(../../assets/img/hero.jpg);
+  background-image: linear-gradient(to right bottom, rgba($color-primary-light, 0.8), rgba($color-primary-dark, 0.8)), url(../../../assets/img/hero.jpg);
 
   /* prevents 'cropping' the image when resizing window */
   background-position: top;
