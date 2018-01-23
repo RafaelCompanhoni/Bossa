@@ -1,6 +1,6 @@
 import React from 'react';
 import CSSModules from 'react-css-modules';
-import styles from '../../styles/header.scss';
+import styles from '../../styles/layout/header.scss';
 
 const Header = () => (
   <div styleName="header">

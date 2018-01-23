@@ -1,0 +1,14 @@
+@import "base/typography";
+
+html {
+  /* defines rem: the default font size is 16 so 0.625* 16 === 10px. */
+  font-size: 62.5%;
+}
+
+body {
+  /* main container */
+  padding: 3rem;
+
+  /* will ensure consistent and predictable sizing */
+  box-sizing: border-box;
+}

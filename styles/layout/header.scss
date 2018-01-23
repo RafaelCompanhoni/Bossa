@@ -1,16 +1,11 @@
-$color-primary: #55c57a;
-$color-primary-light: #7ed56f;
-$color-primary-dark: #28b485;
-
-$color-white: #FFF;
-$color-black: #000;
-$color-gray: #777;
+@import "../abstracts/variables";
+@import "../base/animations";
 
 /****** HERO ******/
 
 .header {
   /* a gradient, starting from left and diagonally to 'right bottom' -- it's placed over a background image  */
-  background-image: linear-gradient(to right bottom, rgba($color-primary-light, 0.8), rgba($color-primary-dark, 0.8)), url(../assets/img/hero.jpg);
+  background-image: linear-gradient(to right bottom, rgba($color-primary-light, 0.8), rgba($color-primary-dark, 0.8)), url(../../assets/img/hero.jpg);
 
   /* prevents 'cropping' the image when resizing window */
   background-position: top;
@@ -151,52 +146,6 @@ $color-gray: #777;
   &:active {
     transform: translateY(-1px);
     box-shadow: 0 .5rem 1rem rgba($color-black,.2);
-  }
-}
-
-/****** ANIMATION DEFINITIONS ******/
-
-@keyframes moveInLeft {
-  0% {
-    opacity: 0;
-    transform: translate(-10rem);
-  }
-
-  80% {
-    transform: translate(1rem);
-  }
-
-  100% {
-    opacity: 1;
-    transform: translate(0);
-  }
-}
-
-@keyframes moveInRight {
-  0% {
-    opacity: 0;
-    transform: translate(10rem);
-  }
-
-  80% {
-    transform: translate(-1rem);
-  }
-
-  100% {
-    opacity: 1;
-    transform: translate(0);
-  }
-}
-
-@keyframes moveInBottom {
-  0% {
-    opacity: 0;
-    transform: translateY(3rem)
-  }
-
-  100% {
-    opacity: 1;
-    transform: translateY(0);
   }
 }
 
