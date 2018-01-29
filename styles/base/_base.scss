@@ -1,0 +1,21 @@
+/* reset */
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+/* defines rem: the default font size is 16 so 0.625* 16 === 10px. */
+html {
+  font-size: 62.5%;
+}
+
+/* main container */
+body {
+  padding: 3rem;
+
+  // will ensure consistent and predictable sizing
+  box-sizing: border-box;
+}
