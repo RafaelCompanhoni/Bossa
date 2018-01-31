@@ -36,10 +36,14 @@ const AboutSection = () => (
       </div>
 
       <div className="col-1-of-2">
-        Image composition
+        <div styleName="composition">
+          <img src="assets/img/nat-1-large.jpg" alt="" styleName="composition__photo composition__photo--p1" />
+          <img src="assets/img/nat-2-large.jpg" alt="" styleName="composition__photo composition__photo--p2" />
+          <img src="assets/img/nat-3-large.jpg" alt="" styleName="composition__photo composition__photo--p3" />
+        </div>
       </div>
     </div>
   </section>
 );
 
-export default CSSModules(AboutSection, styles);
+export default CSSModules(AboutSection, styles, { allowMultiple: true });
