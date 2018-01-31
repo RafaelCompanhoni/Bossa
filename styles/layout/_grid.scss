@@ -1,5 +1,4 @@
 :global .row {
-  background-color: #eee;
   max-width: $grid-width;
   margin: 0 auto;
 
@@ -10,7 +9,6 @@
 
   // common to all columns (select elements starting with "col-")
   [class^="col-"] {
-    background-color: orangered;
     float: left;
 
     &:not(:last-child) {

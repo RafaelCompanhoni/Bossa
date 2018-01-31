@@ -77,6 +77,12 @@ exports.stylesLoader = () => ({
                 sourceMap: true,
               },
             },
+            {
+              loader: 'sass-resources-loader',
+              options: {
+                resources: ['./styles/index.scss'], // global sass imports (so you don't need to import in every specific sass file)
+              },
+            },
           ],
         }),
       },
