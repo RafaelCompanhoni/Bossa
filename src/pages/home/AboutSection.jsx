@@ -5,7 +5,7 @@ import styles from '../../../styles/pages/home/about-section.scss';
 const AboutSection = () => (
   <section styleName="section-about">
     <div className="u-center-text u-margin-bottom-big">
-      <h2 styleName="heading-secondary">
+      <h2 className="heading-secondary">
         Exciting tours for adventurous people
       </h2>
     </div>
@@ -16,7 +16,7 @@ const AboutSection = () => (
           You are going to fall in love with nature
         </h3>
 
-        <p styleName="paragraph">
+        <p className="paragraph">
           Lorem ipsum, dolor sit amet consectetur adipisicing elit.
           Excepturi nihil ea voluptates quas totam atque. Perferendis
           perspiciatis porro officia sed facere ratione vero veritatis
@@ -27,12 +27,12 @@ const AboutSection = () => (
           Live adventures like you never have before
         </h3>
 
-        <p styleName="paragraph">
+        <p className="paragraph">
           Lorem ipsum, dolor sit amet consectetur adipisicing elit.
           Excepturi nihil ea voluptates quas totam atque.
         </p>
 
-        <a href="www.google.com" className="btn-text">Learn more &raar</a>
+        <a href="www.google.com" className="btn-text ">Learn more &rarr;</a>
       </div>
 
       <div className="col-1-of-2">

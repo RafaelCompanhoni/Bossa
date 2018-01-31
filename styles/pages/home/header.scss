@@ -90,7 +90,7 @@
     color: $color-gray;
     padding: 1.5rem 4rem;
     border-radius: 10rem;
-    font-size: 1.6rem;
+    font-size: $default-font-size;
 
     /* allows the use of 'transform' property */
     display: inline-block;
