@@ -16,7 +16,7 @@ const Header = () => (
 
       {
         // eslint-disable-next-line
-      }<a href="#" styleName="btn--white">Discover our tours</a>
+      }<a href="#" className="btn btn--white">Discover our tours</a>
     </div>
   </div>
 );
