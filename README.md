@@ -1,4 +1,4 @@
-# Bossa CMS
+# Bossa
 
 Note on global styles (e.g. layout/_grid.scss)
   * Prefix the global styles with **:global** in order to make it work with PostCSS

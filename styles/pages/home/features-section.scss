@@ -3,7 +3,7 @@
   background-image: linear-gradient(to right bottom, rgba($color-primary-light, 0.8), rgba($color-primary-dark, 0.8)), url(../../../assets/img/nat-4.jpg);
   background-size: cover;
   transform: skewY(-7deg);
-  margin-top: -12.5rem;
+  margin-top: -16rem;
 
   // selects only the direct children (i.e. just the first level of children) -- in this case the skew compensates the parent skew to make the boxes straight
   & > * {
