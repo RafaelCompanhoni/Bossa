@@ -6,6 +6,7 @@ import Header from './Header';
 import AboutSection from './AboutSection';
 import FeaturesSection from './FeaturesSection';
 import ToursSection from './ToursSection';
+import StoriesSection from './StoriesSection';
 
 const Home = () => (
   <div>
@@ -13,6 +14,7 @@ const Home = () => (
     <AboutSection />
     <FeaturesSection />
     <ToursSection />
+    <StoriesSection />
   </div>
 );
 
