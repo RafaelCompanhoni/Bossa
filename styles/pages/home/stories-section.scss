@@ -1,13 +1,13 @@
 .section-stories {
   padding: 15rem 0;
-  background-color: $color-gray-light-1;
+  position: relative;
 }
 
 .story {
   width: 75%;
   margin: 0 auto;
   box-shadow: 0 rem 6rem rgba($color-black, .1);
-  background-color: $color-white;
+  background-color: rgba($color-white, .6);
   border-radius: .3rem;
   padding: 6rem;
   padding-left: 9rem;
@@ -22,6 +22,7 @@
     shape-outside: circle(50% at 50% 50%);  // makes the surrounding text to countour the circle
     transform: translateX(-3rem) skewX(12deg);
     position: relative;
+    overflow: hidden;
   }
 
   &__img {
@@ -57,5 +58,21 @@
   &:hover &__caption {
     opacity: 1;
     transform: translate(-50%, -50%);
+  }
+}
+
+.bg-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: -1;
+  opacity: .15;
+  overflow: hidden;
+
+  &__content {
+    height: 100%;
+    width: 100%;
+    object-fit: cover; // keeps the video ratio while fitting the parent element
   }
 }

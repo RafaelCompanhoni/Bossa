@@ -5,10 +5,10 @@ import styles from '../../../styles/pages/home/stories-section.scss';
 
 const StoriesSection = () => (
   <section styleName="section-stories">
-    <div className="bg-video">
-      <video className="bg-bideo__content">
+    <div styleName="bg-video">
+      <video styleName="bg-video__content" autoPlay muted loop>
         <source src="../../../assets/img/video.mp4" type="video/mp4" />
-        <source src="../../../assets/img/video.webm" type="video/web" />
+        <source src="../../../assets/img/video.webm" type="video/webm" />
       </video>
     </div>
 
