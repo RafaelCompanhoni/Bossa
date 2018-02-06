@@ -1,4 +1,3 @@
-/* eslint-disable */
 import React from 'react';
 import CSSModules from 'react-css-modules';
 import styles from '../../../styles/pages/home/stories-section.scss';
@@ -6,13 +5,13 @@ import styles from '../../../styles/pages/home/stories-section.scss';
 const StoriesSection = () => (
   <section styleName="section-stories">
     <div styleName="bg-video">
-      <video styleName="bg-video__content" autoPlay muted loop>
+      <video styleName="bg-video__content" autoPlay loop muted>
         <source src="../../../assets/img/video.mp4" type="video/mp4" />
         <source src="../../../assets/img/video.webm" type="video/webm" />
       </video>
     </div>
 
-    <div className="u-center-text u-margin-bottom-big">
+    <div styleName="section-stories__heading" className="u-center-text u-margin-bottom-big">
       <h2 className="heading-secondary">We make people genuinely happy</h2>
     </div>
 

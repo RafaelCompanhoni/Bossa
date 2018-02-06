@@ -1,6 +1,9 @@
 .section-stories {
-  padding: 15rem 0;
   position: relative;
+
+  &__heading {
+    padding-top: 3rem;
+  }
 }
 
 .story {
