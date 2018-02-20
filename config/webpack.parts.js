@@ -146,6 +146,7 @@ exports.useHtmlTemplatePlugin = () => ({
   plugins: [
     new HtmlWebpackPlugin({
       template: './src/index.html',
+      favicon: './assets/img/favicon.png',
     }),
   ],
 });
