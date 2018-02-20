@@ -38,4 +38,53 @@
     display: block;
     transform: all .3s;
   }
+
+  &__radio-group {
+    width: 49%;
+    display: inline-block;
+  }
+
+  &__radio-label {
+    font-size: $default-font-size;
+    cursor: pointer;
+    position: relative;
+    padding-left: 4.5rem;
+  }
+
+  /*** the 'real' radio input is hidden and a placeholder (i.e. 'radion-button' span) is actually used. This enables creating the 'fancy' radio selector. ***/
+
+  &__radio-input {
+    display: none;
+  }
+
+  &__radio-button {
+    height: 3rem;
+    width: 3rem;
+    border: .5rem solid $color-primary;
+    border-radius: 50%;
+    display: block;
+    position: absolute;
+    left: 0;
+    top: -.4rem;
+
+    &::after {
+      content: "";
+      display: block;
+      height: 1.3rem;
+      width: 1.3rem;
+      border-radius: 50%;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: $color-primary;
+      opacity: 0;
+      transition: opacity .2s;
+    }
+  }
+}
+
+// can't use sibling selector with nested syntax -- this rule makes the inner circle to be displayed when the hidden radio is selected
+:global .form__radio-input:checked ~ .form__radio-button:after {
+  opacity: 1;
 }
