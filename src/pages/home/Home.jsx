@@ -8,6 +8,7 @@ import FeaturesSection from './FeaturesSection';
 import ToursSection from './ToursSection';
 import StoriesSection from './StoriesSection';
 import BookingSection from './BookingSection';
+import Footer from './Footer';
 
 const Home = () => (
   <div>
@@ -17,6 +18,7 @@ const Home = () => (
     <ToursSection />
     <StoriesSection />
     <BookingSection />
+    <Footer />
   </div>
 );
 
