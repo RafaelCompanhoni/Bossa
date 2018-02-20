@@ -13,17 +13,11 @@ const BookingSection = () => (
             </div>
 
             <div className="form__group">
-              <label htmlFor="name" className="label form__label">
-                Full name
-                <input id="name" type="text" className="form__input" placeholder="Full name" required />
-              </label>
+              <input id="name" type="text" className="form__input" placeholder="Full name" required />
             </div>
 
             <div className="form__group">
-              <label htmlFor="email" className="label form__label">
-                Email address
-                <input id="email" type="email" className="form__input" placeholder="Email address" required />
-              </label>
+              <input id="email" type="email" className="form__input" placeholder="Email address" required />
             </div>
           </form>
         </div>
