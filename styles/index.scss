@@ -1,13 +1,12 @@
-@import "abstracts/functions";
 @import "abstracts/mixins";
 @import "abstracts/variables";
 @import "base/base";
 @import "base/typography";
 @import "base/animations";
 @import "base/utilities";
-@import "components/buttons";
-@import "components/card";
-@import "components/form";
+@import "components/global/buttons";
+@import "components/global/card";
+@import "components/global/form";
 @import "vendors/linea-font/styles";
 @import "layout/grid";
 

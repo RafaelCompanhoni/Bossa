@@ -1,15 +1,11 @@
 const path = require('path');
 const merge = require('webpack-merge');
 const parts = require('./webpack.parts.js');
-const packageJson = require('../package.json');
-
-const VENDOR_LIBS = Object.keys(packageJson.dependencies);
 
 const commonConfig = merge([
   {
     entry: {
-      bundle: './src/index.jsx',
-      vendor: VENDOR_LIBS,
+      bundle: path.resolve(__dirname, '../src/index.jsx'),
     },
     output: {
       path: path.resolve(__dirname, '../build'),
@@ -22,7 +18,6 @@ const commonConfig = merge([
   parts.jsLinterLoader(),
   parts.jsTranspilerLoader(),
   parts.stylesLoader(),
-  parts.imagesLoader(),
   parts.useHtmlTemplatePlugin(),
   parts.codeSplittingPlugin(),
 ]);

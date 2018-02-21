@@ -1,0 +1,46 @@
+.about-section {
+  background-color: $color-gray-light-1;
+  padding: 25rem 0;
+  margin-top: -20vh; // 'fits' the polygon header bottom
+}
+
+.composition {
+  position: relative;
+
+  // photos that are not currently hovered get smaller
+  &:hover &__photo:not(:hover) {
+    transform: scale(.95);
+  }
+
+  &__photo {
+    width: 55%;
+    box-shadow: 0 1.5rem 4rem rgba($color-black, .4);
+    border-radius: 2px;
+    position: absolute;
+    z-index: 10;
+    transition: all .2s;
+    outline-offset: 2rem;
+
+    &:hover {
+      transform: scale(1.05) translateY(-.5rem);        // gets bigger and a 'up' effect
+      box-shadow: 0 2.5rem 4rem rgba($color-black, .5);
+      z-index: 20;                                      // placed above other photos
+      outline: 1.5rem solid $color-primary;             // special 'border' that allows offset (see offset in the '.composition__photo' above)
+    }
+
+    &--p1 {
+      left: 0;
+      top: -2rem;
+    }
+
+    &--p2 {
+      right: 0;
+      top: 2rem;
+    }
+
+    &--p3 {
+      left: 20%;
+      top: 10rem;
+    }
+  }
+}

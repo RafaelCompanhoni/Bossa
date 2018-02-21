@@ -93,27 +93,27 @@ exports.stylesLoader = () => ({
   ],
 });
 
-exports.imagesLoader = () => ({
+exports.imagesLoader = ({ include, exclude, options } = {}) => ({
   module: {
     rules: [
       {
-        test: /\.(jpe?g|png|gif|svg)$/,
-        use: [
-          {
-            loader: 'url-loader',
-            options: { limit: 8192 },
-          },
-          'image-webpack-loader',
-        ],
+        test: /\.(png|jpg|svg|mp4|webm)$/,
+        include,
+        exclude,
+        use: {
+          loader: 'url-loader',
+          options,
+        },
       },
     ],
   },
 });
 
-exports.devServerConfig = ({ host, port } = {}) => ({
+exports.devServerConfig = ({ host, port, proxy } = {}) => ({
   devServer: {
     host,
     port,
+    proxy,
     stats: {
       assets: false,
       modules: false,
@@ -158,3 +158,12 @@ exports.codeSplittingPlugin = () => ({
     }),
   ],
 });
+
+exports.setFreeVariablePlugin = (key, value) => {
+  const env = {};
+  env[key] = JSON.stringify(value);
+
+  return {
+    plugins: [new webpack.DefinePlugin(env)],
+  };
+};

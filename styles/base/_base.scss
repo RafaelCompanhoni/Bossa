@@ -7,15 +7,11 @@
   box-sizing: inherit;
 }
 
-/* defines rem: the default font size is 16 so 0.625* 16 === 10px. */
 html {
-  font-size: 62.5%;
+  font-size: 62.5%; // defines rem: the default font size is 16 so 0.625* 16 === 10px.
 }
 
-/* main container */
 body {
   padding: 3rem;
-
-  // will ensure consistent and predictable sizing
-  box-sizing: border-box;
+  box-sizing: border-box; // ensures consistent and predictable sizing
 }
